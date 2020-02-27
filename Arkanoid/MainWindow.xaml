@@ -18,7 +18,7 @@
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
-                <DataTemplate DataType="local:Entity">
+                <DataTemplate DataType="local:Entities.Entity">
                     <Image Source="{Binding ImgSource}" Width="{Binding Width}" Height="{Binding Height}">
                         <Image.RenderTransform>
                             <TranslateTransform X="{Binding X}" Y="{Binding Y}"/>

@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Text;
 using System.Windows.Media.Imaging;
 
-namespace Arkanoid
+namespace Arkanoid.Entities
 {
-    public class Entity : INotifyPropertyChanged
+    public abstract class Entity : INotifyPropertyChanged
     {
         #region Properties
         private double x;
         public double X
         {
             get { return this.x; }
-            set
+            protected set
             {
                 if (this.x != value)
                 {
@@ -27,7 +28,7 @@ namespace Arkanoid
         public double Y
         {
             get { return this.y; }
-            set
+            protected set
             {
                 if (this.y != value)
                 {
@@ -37,10 +38,10 @@ namespace Arkanoid
             }
         }
 
-        public double Width { get; set; }
-        public double Height { get; set; }
+        public double Width { get; protected set; }
+        public double Height { get; protected set; }
 
-        public BitmapImage ImgSource { get; set; }
+        public BitmapImage ImgSource { get; private set; }
         #endregion
 
         #region Change Handler
@@ -49,6 +50,14 @@ namespace Arkanoid
         public void NotifyPropertyChanged(string propName)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
+        }
+        #endregion
+
+        #region Functions
+        protected void LoadImage(string imgName)
+        {
+            string path = System.Environment.CurrentDirectory + @"\Images\" + imgName + ".png";
+            ImgSource = new BitmapImage(new Uri(path, UriKind.Absolute));
         }
         #endregion
     }
