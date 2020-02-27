@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Arkanoid.Sidebar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Arkanoid"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="100">
+    <StackPanel>
+        <StackPanel>
+            <WrapPanel>
+                <Label Content="Score:"/>
+                <Label Content="10"/>
+            </WrapPanel>
+            <WrapPanel>
+                <Label Content="Lifes:"/>
+                <Label Content="10"/>
+            </WrapPanel>
+            <WrapPanel>
+                <Label Content="Rockets:"/>
+                <Label Content="10"/>
+            </WrapPanel>
+        </StackPanel>
+        <StackPanel>
+            <Label Content="Cheats"/>
+            <Button>More lifes</Button>
+            <Button>More rockets</Button>
+            <Button>No ufo</Button>
+        </StackPanel>
+    </StackPanel>
+</UserControl>
