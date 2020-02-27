@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Media.Imaging;
 
 namespace Arkanoid
 {
@@ -11,7 +12,7 @@ namespace Arkanoid
 
         public ViewModel()
         {
-            AllEntities.Add(new Entity { X = 10, Y = 20, Width = 100, Height = 25 });
+            AllEntities.Add(new Entity { X = 10, Y = 20, Width = 100, Height = 25, ImgSource= new BitmapImage(new Uri(System.Environment.CurrentDirectory + @"\Images\pad.png", UriKind.Absolute)) });
         }
     }
 }

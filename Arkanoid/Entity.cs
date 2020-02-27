@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Windows.Media.Imaging;
 
 namespace Arkanoid
 {
@@ -38,6 +39,8 @@ namespace Arkanoid
 
         public double Width { get; set; }
         public double Height { get; set; }
+
+        public BitmapImage ImgSource { get; set; }
         #endregion
 
         #region Change Handler
