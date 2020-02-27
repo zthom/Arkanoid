@@ -6,14 +6,11 @@ namespace Arkanoid.Entities
 {
     public class EntityBrickBlue : EntityBrick
     {
-        public EntityBrickBlue(double x, double y)
+        public EntityBrickBlue(double x, double y) : base(x, y)
         {
-            this.X = x;
-            this.Y = y;
-            this.Width = 200;
-            this.Height = 100;
-
             LoadImage("BrickBlue");
         }
+
+        public override int Score => 1;
     }
 }

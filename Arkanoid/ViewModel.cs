@@ -13,7 +13,24 @@ namespace Arkanoid
 
         public ViewModel()
         {
-            AllEntities.Add(new EntityBrickBlue(50, 50));
+            Random rand = new Random();
+
+            for (int x = 0; x < Constants.CanvasWidth; x += Constants.BrickWidth)
+            {
+                for (int y = 100; y < 300; y += Constants.BrickHeight)
+                {
+                    int selected = rand.Next(20);
+
+                    if (selected == 0)
+                        AllEntities.Add(new EntityBrickBall(x, y));
+                    else if (selected < 5)
+                        AllEntities.Add(new EntityBrickRocket(x, y));
+                    else if (selected < 10)
+                        AllEntities.Add(new EntityBrickBlue(x, y));
+                    else
+                        AllEntities.Add(new EntityBrickGreen(x, y));
+                }
+            }
         }
     }
 }

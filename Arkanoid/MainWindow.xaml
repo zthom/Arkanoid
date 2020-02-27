@@ -14,7 +14,7 @@
         <ItemsControl ItemsSource="{Binding AllEntities}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <Canvas Background="LightGray" Width="500" Height="500"/>
+                    <Canvas Background="LightGray" Width="500" Height="500" Margin="10,0"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>

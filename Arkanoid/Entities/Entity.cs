@@ -54,6 +54,12 @@ namespace Arkanoid.Entities
         #endregion
 
         #region Functions
+        public Entity(double x, double y)
+        {
+            this.X = x;
+            this.Y = y;
+        }
+
         protected void LoadImage(string imgName)
         {
             string path = System.Environment.CurrentDirectory + @"\Images\" + imgName + ".png";
