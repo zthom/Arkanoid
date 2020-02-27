@@ -11,7 +11,7 @@ namespace Arkanoid
 
         public ViewModel()
         {
-            AllEntities.Add(new Entity { X = 10, Y = 20, Width = 200, Height = 500 });
+            AllEntities.Add(new Entity { X = 10, Y = 20, Width = 100, Height = 25 });
         }
     }
 }
