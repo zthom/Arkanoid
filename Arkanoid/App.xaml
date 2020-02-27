@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:Arkanoid"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType ="Label" x:Key="Info">
+            <Setter Property = "FontWeight" Value="Bold" />
+        </Style>
+        <Style TargetType ="Label" x:Key="Header">
+            <Setter Property = "HorizontalAlignment" Value = "Center" />
+            <Setter Property = "FontWeight" Value="Bold" />
+        </Style>
     </Application.Resources>
 </Application>

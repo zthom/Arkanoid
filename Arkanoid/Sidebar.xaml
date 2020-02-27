@@ -7,25 +7,28 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="100">
     <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Label Content="Score:" Style="{StaticResource Info}"/>
+            <Label Grid.Column="1" Content="10"/>
+            <Label Grid.Row="1" Content="Lifes:" Style="{StaticResource Info}"/>
+            <Label Grid.Column="1" Grid.Row="1" Content="10"/>
+            <Label Grid.Row="2" Content="Rockets:" Style="{StaticResource Info}"/>
+            <Label Grid.Column="1" Grid.Row="2"  Content="10"/>
+        </Grid>
         <StackPanel>
-            <WrapPanel>
-                <Label Content="Score:"/>
-                <Label Content="10"/>
-            </WrapPanel>
-            <WrapPanel>
-                <Label Content="Lifes:"/>
-                <Label Content="10"/>
-            </WrapPanel>
-            <WrapPanel>
-                <Label Content="Rockets:"/>
-                <Label Content="10"/>
-            </WrapPanel>
-        </StackPanel>
-        <StackPanel>
-            <Label Content="Cheats"/>
+            <Label Content="Cheats" Style="{StaticResource Header}" />
             <Button>More lifes</Button>
             <Button>More rockets</Button>
-            <Button>No ufo</Button>
+            <Button>Toggle ufo</Button>
         </StackPanel>
     </StackPanel>
 </UserControl>
