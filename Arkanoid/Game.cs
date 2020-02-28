@@ -7,11 +7,11 @@ using Arkanoid.Entities;
 
 namespace Arkanoid
 {
-    public class ViewModel
+    public class Game
     {
         public ObservableCollection<Entity> AllEntities { get; set; } = new ObservableCollection<Entity>();
 
-        public ViewModel()
+        public Game()
         {
             Random rand = new Random();
 
@@ -31,6 +31,8 @@ namespace Arkanoid
                         AllEntities.Add(new EntityBrickGreen(x, y));
                 }
             }
+
+            AllEntities.Add(new EntityPad(250, 450));
         }
     }
 }

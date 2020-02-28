@@ -13,5 +13,8 @@ namespace Arkanoid
 
         public static int BrickWidth => DefaultSize;
         public static int BrickHeight => DefaultSize / 2;
+
+        public static int PadWidth => DefaultSize * 2;
+        public static int PadHeight => DefaultSize / 2;
     }
 }

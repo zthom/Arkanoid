@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="800">
     <Window.DataContext>
-        <local:ViewModel/>
+        <local:Game/>
     </Window.DataContext>
     <WrapPanel >
         <local:Sidebar />

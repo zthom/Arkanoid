@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Update="Images\Ball.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Images\BrickBall.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
