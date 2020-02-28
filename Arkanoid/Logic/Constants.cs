@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Arkanoid
+namespace Arkanoid.Logic
 {
     static class Constants
     {

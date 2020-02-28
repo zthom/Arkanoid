@@ -6,7 +6,7 @@ using System.Text;
 using System.Windows.Media.Imaging;
 using Arkanoid.Sprites;
 
-namespace Arkanoid
+namespace Arkanoid.Logic
 {
     public class Game
     {

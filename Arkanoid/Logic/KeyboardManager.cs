@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 
-namespace Arkanoid
+namespace Arkanoid.Logic
 {
     public class KeyboardManager
     {
