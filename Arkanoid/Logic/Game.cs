@@ -26,33 +26,34 @@ namespace Arkanoid.Logic
                     int selected = rand.Next(20);
 
                     if (selected == 0)
-                        AllEntities.Add(new SpriteBrickBall(x, y));
+                        AddSprite(new SpriteBrickBall(x, y));
                     else if (selected < 5)
-                        AllEntities.Add(new SpriteBrickRocket(x, y));
+                        AddSprite(new SpriteBrickRocket(x, y));
                     else if (selected < 10)
-                        AllEntities.Add(new SpriteBrickBlue(x, y));
+                        AddSprite(new SpriteBrickBlue(x, y));
                     else
-                        AllEntities.Add(new SpriteBrickGreen(x, y));
+                        AddSprite(new SpriteBrickGreen(x, y));
                 }
             }
 
-            AllEntities.Add(new SpritePad(250, 450));
+            AddSprite(new SpritePad(250, 450));
+        }
+
+        public void AddSprite(Sprite sprite)
+        {
+            AllEntities.Add(sprite);
         }
 
         public void OnTick()
         {
-            if (KeyboardManager.IsPressed(Key.Space) && !AllEntities.OfType<SpriteBall>().Any())
-            {
-                SpritePad pad = AllEntities.OfType<SpritePad>().Single();
-                AllEntities.Add(new SpriteBall(pad.X + pad.Width / 2 - Constants.BallSize / 2, pad.Y - Constants.BallSize));
-            }
+           
 
             UpdateSprites();
         }
 
         private void UpdateSprites()
         {
-            foreach (var sprite in AllEntities.OfType<SpriteMoving>())
+            foreach (var sprite in AllEntities.OfType<SpriteMoving>().ToArray())
             {
                 var collision = AllEntities.Where(x => x != sprite).FirstOrDefault(x => sprite.IsCollision(x));
 

@@ -43,7 +43,7 @@ namespace Arkanoid.Sprites
         #region Properties without Nofity
         public double Width { get; protected set; }
         public double Height { get; protected set; }
-        public bool Alive { get; protected set; } = true;
+        public bool Alive { get; protected set; }
         public double Right => X + Width;
         public double Bottom => Y + Height;
 
@@ -64,6 +64,7 @@ namespace Arkanoid.Sprites
         {
             this.X = x;
             this.Y = y;
+            this.Alive = true;
         }
 
         protected void LoadImage(string imgName)

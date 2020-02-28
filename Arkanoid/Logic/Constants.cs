@@ -9,7 +9,7 @@ namespace Arkanoid.Logic
         public static int CanvasWidth => 700;
         public static int CanvasHeight => 500;
 
-         static int DefaultSize => 50;
+        static int DefaultSize => 50;
 
         public static int BrickWidth => DefaultSize;
         public static int BrickHeight => DefaultSize / 2;
@@ -17,9 +17,13 @@ namespace Arkanoid.Logic
         public static int PadWidth => DefaultSize * 2;
         public static int PadHeight => DefaultSize / 2;
 
+        public static int RocketWidth => DefaultSize / 2;
+        public static int RocketHeight => DefaultSize * 2;
+
         public static int BallSize => DefaultSize / 2;
 
         public static double PadSpeed => 5;
         public static double BallSpeed => 5;
+        public static double RocketSpeed => 5;
     }
 }

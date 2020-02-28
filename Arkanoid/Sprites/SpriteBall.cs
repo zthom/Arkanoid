@@ -53,6 +53,10 @@ namespace Arkanoid.Sprites
                 if (this.Y < sprite.Bottom || this.Bottom > sprite.Y)
                     SpeedY *= -1;
             }
+            else if (sprite is SpriteRocket)
+            {
+                Alive = false;
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Arkanoid.Logic;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows.Input;
 
@@ -22,6 +23,18 @@ namespace Arkanoid.Sprites
                 X -= Constants.PadSpeed;
             else if (game.KeyboardManager.IsPressed(Key.Right) && X < (Constants.CanvasWidth - Width))
                 X += Constants.PadSpeed;
+
+            if (game.KeyboardManager.IsPressed(Key.LeftCtrl) && game.Counter.Rockets > 0 && !game.AllEntities.OfType<SpriteRocket>().Any())
+            {
+                game.Counter.ModifyRockets(-1);
+
+                game.AddSprite(new SpriteRocket(this.X + this.Width / 2 - Constants.RocketWidth / 2, this.Y - Constants.RocketHeight));
+            }
+
+            if (game.KeyboardManager.IsPressed(Key.Space) && !game.AllEntities.OfType<SpriteBall>().Any())
+            {
+                game.AddSprite(new SpriteBall(this.X + this.Width / 2 - Constants.BallSize / 2, this.Y - Constants.BallSize));
+            }
         }
     }
 }
