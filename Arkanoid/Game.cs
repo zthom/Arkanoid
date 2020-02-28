@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Windows.Media.Imaging;
 using Arkanoid.Entities;
@@ -9,7 +10,8 @@ namespace Arkanoid
 {
     public class Game
     {
-        public ObservableCollection<Entity> AllEntities { get; set; } = new ObservableCollection<Entity>();
+        public ObservableCollection<Entity> AllEntities { get; private set; } = new ObservableCollection<Entity>();
+        public KeyboardManager KeyboardManager { get; private set; } = new KeyboardManager();
 
         public Game()
         {
@@ -33,6 +35,19 @@ namespace Arkanoid
             }
 
             AllEntities.Add(new EntityPad(250, 450));
+        }
+
+        public void OnTick()
+        {
+            foreach (var obj in AllEntities.OfType<EntityMoving>())
+            {
+                obj.Update(this);
+            }
+
+            foreach (var td in AllEntities.Where(x => !x.Alive).ToArray())
+            {
+                AllEntities.Remove(td);
+            }
         }
     }
 }

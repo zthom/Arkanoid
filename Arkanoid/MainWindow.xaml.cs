@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Arkanoid
 {
@@ -23,6 +24,28 @@ namespace Arkanoid
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            Game game = (Game)DataContext;
+            game.KeyboardManager.KeyDown(e.Key);
+        }
+
+        private void Window_PreviewKeyUp(object sender, KeyEventArgs e)
+        {
+            Game game = (Game)DataContext;
+            game.KeyboardManager.KeyUp(e.Key);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Game game = (Game)DataContext;
+
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(20);
+            timer.Tick += (s, e) => game.OnTick();
+            timer.Start();
         }
     }
 }

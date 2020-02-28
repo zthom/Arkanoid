@@ -40,6 +40,7 @@ namespace Arkanoid.Entities
 
         public double Width { get; protected set; }
         public double Height { get; protected set; }
+        public bool Alive { get; protected set; } = true;
 
         public BitmapImage ImgSource { get; private set; }
         #endregion

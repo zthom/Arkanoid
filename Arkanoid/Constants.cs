@@ -16,5 +16,7 @@ namespace Arkanoid
 
         public static int PadWidth => DefaultSize * 2;
         public static int PadHeight => DefaultSize / 2;
+
+        public static double PadSpeed => 5;
     }
 }
