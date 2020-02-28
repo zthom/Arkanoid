@@ -9,14 +9,14 @@ namespace Arkanoid
     {
         public Game Game { get; private set; }
         public RelayCommand CmdCheatBalls { get; private set; }
-        public RelayCommand CmdCheatRocket { get; private set; }
+        public RelayCommand CmdCheatRockets { get; private set; }
 
         public ViewModel()
         {
             Game = new Game();
 
             CmdCheatBalls = new RelayCommand((obj) => Game.Counter.ModifyBalls(100));
-            CmdCheatRocket = new RelayCommand((obj) => Game.Counter.ModifyRockets(100));
+            CmdCheatRockets = new RelayCommand((obj) => Game.Counter.ModifyRockets(100));
         }
     }
 }

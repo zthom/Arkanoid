@@ -26,8 +26,8 @@
         </Grid>
         <StackPanel>
             <Label Content="Cheats" Style="{StaticResource Header}" />
-            <Button>More lifes</Button>
-            <Button>More rockets</Button>
+            <Button Command="{Binding CmdCheatBalls}">More balls</Button>
+            <Button Command="{Binding CmdCheatRockets}">More rockets</Button>
         </StackPanel>
     </StackPanel>
 </UserControl>
