@@ -23,7 +23,7 @@ namespace Arkanoid.Logic
         public static int BallSize => DefaultSize / 2;
         public static int BubbleSize => DefaultSize / 2;
 
-        public static double PadSpeed => 5;
+        public static double PadSpeed => 10;
         public static double BallSpeed => 5;
         public static double RocketSpeed => 5;
         public static double BubbleSpeed => 5;
