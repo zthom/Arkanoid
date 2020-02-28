@@ -12,8 +12,6 @@ namespace Arkanoid.Sprites
 
         public abstract void Update(Game game);
 
-        public virtual void OnCollision(Sprite sprite) { }
-
         public bool IsCollision(Sprite sprite)
         {
             return this.X < sprite.Right &&

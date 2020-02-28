@@ -32,7 +32,7 @@ namespace Arkanoid.Sprites
                 SpeedY *= -1;
         }
 
-        public override void OnCollision(Sprite sprite)
+        public override void OnCollision(Game game, Sprite sprite)
         {
             if (sprite is SpritePad)
             {

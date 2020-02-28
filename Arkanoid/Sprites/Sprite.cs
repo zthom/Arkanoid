@@ -9,7 +9,7 @@ namespace Arkanoid.Sprites
 {
     public abstract class Sprite : INotifyPropertyChanged
     {
-        #region Properties
+        #region Properties with Notify
         private double x;
         public double X
         {
@@ -37,7 +37,9 @@ namespace Arkanoid.Sprites
                 }
             }
         }
+        #endregion
 
+        #region Properties without Nofity
         public double Width { get; protected set; }
         public double Height { get; protected set; }
         public bool Alive { get; protected set; } = true;
@@ -68,6 +70,8 @@ namespace Arkanoid.Sprites
             string path = System.Environment.CurrentDirectory + @"\Images\" + imgName + ".png";
             ImgSource = new BitmapImage(new Uri(path, UriKind.Absolute));
         }
+
+        public virtual void OnCollision(Game game, Sprite sprite) { }
         #endregion
     }
 }

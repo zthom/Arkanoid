@@ -28,19 +28,19 @@ namespace Arkanoid
 
         private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            Game game = (Game)DataContext;
+            Game game = ((ViewModel)DataContext).Game;
             game.KeyboardManager.KeyDown(e.Key);
         }
 
         private void Window_PreviewKeyUp(object sender, KeyEventArgs e)
         {
-            Game game = (Game)DataContext;
+            Game game = ((ViewModel)DataContext).Game;
             game.KeyboardManager.KeyUp(e.Key);
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Game game = (Game)DataContext;
+            Game game = ((ViewModel)DataContext).Game;
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(20);

@@ -12,6 +12,7 @@ namespace Arkanoid
     {
         public ObservableCollection<Sprite> AllEntities { get; private set; } = new ObservableCollection<Sprite>();
         public KeyboardManager KeyboardManager { get; private set; } = new KeyboardManager();
+        public Counter Counter { get; private set; } = new Counter();
 
         public Game()
         {
@@ -44,8 +45,13 @@ namespace Arkanoid
             {
                 var collision = AllEntities.Where(x => x != sprite).FirstOrDefault(x => sprite.IsCollision(x));
 
-                if(collision != null)
-                    sprite.OnCollision(collision);
+                if (collision != null)
+                {
+                    sprite.OnCollision(this, collision);
+
+                    if (collision is SpriteMoving == false)
+                        collision.OnCollision(this, sprite);
+                }
 
                 sprite.Update(this);
             }

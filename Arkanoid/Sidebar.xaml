@@ -18,11 +18,11 @@
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
             <Label Content="Score:" Style="{StaticResource Info}"/>
-            <Label Grid.Column="1" Content="10"/>
+            <Label Grid.Column="1" Content="{Binding Game.Counter.Score}"/>
             <Label Grid.Row="1" Content="Balls:" Style="{StaticResource Info}"/>
-            <Label Grid.Column="1" Grid.Row="1" Content="10"/>
+            <Label Grid.Column="1" Grid.Row="1" Content="{Binding Game.Counter.BallCounter}"/>
             <Label Grid.Row="2" Content="Rockets:" Style="{StaticResource Info}"/>
-            <Label Grid.Column="1" Grid.Row="2"  Content="10"/>
+            <Label Grid.Column="1" Grid.Row="2"  Content="{Binding Game.Counter.Rockets}"/>
         </Grid>
         <StackPanel>
             <Label Content="Cheats" Style="{StaticResource Header}" />

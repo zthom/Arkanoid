@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="900" PreviewKeyDown="Window_PreviewKeyDown" PreviewKeyUp="Window_PreviewKeyUp" Loaded="Window_Loaded">
     <Window.DataContext>
-        <local:Game/>
+        <local:ViewModel/>
     </Window.DataContext>
     <WrapPanel >
         <local:Sidebar />
-        <ItemsControl ItemsSource="{Binding AllEntities}">
+        <ItemsControl ItemsSource="{Binding Game.AllEntities}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <Canvas Background="LightGray" Width="700" Height="500" Margin="10,0"/>

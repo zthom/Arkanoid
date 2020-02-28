@@ -13,5 +13,12 @@ namespace Arkanoid.Sprites
         }
 
         public abstract int Score { get; }
+
+        public override void OnCollision(Game game, Sprite sprite)
+        {
+            Alive = false;
+
+            game.Counter.IncreaseScore(Score);
+        }
     }
 }
