@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Arkanoid.Entities
+namespace Arkanoid.Sprites
 {
-    public class EntityBall : EntityMoving
+    public class SpriteBall : SpriteMoving
     {
         private double SpeedX { get; set; }
         private double SpeedY { get; set; }
 
-        public EntityBall(double x, double y) : base(x, y)
+        public SpriteBall(double x, double y) : base(x, y)
         {
             this.Width = Constants.BallSize;
             this.Height = Constants.BallSize;
@@ -29,6 +29,12 @@ namespace Arkanoid.Entities
                 SpeedX *= -1;
 
             if (Y < 0 || Y > (Constants.CanvasHeight - Height))
+                SpeedY *= -1;
+        }
+
+        protected override void OnCollision(Sprite sprite)
+        {
+            if (sprite is SpritePad)
                 SpeedY *= -1;
         }
     }

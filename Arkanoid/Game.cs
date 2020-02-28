@@ -4,13 +4,13 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Windows.Media.Imaging;
-using Arkanoid.Entities;
+using Arkanoid.Sprites;
 
 namespace Arkanoid
 {
     public class Game
     {
-        public ObservableCollection<Entity> AllEntities { get; private set; } = new ObservableCollection<Entity>();
+        public ObservableCollection<Sprite> AllEntities { get; private set; } = new ObservableCollection<Sprite>();
         public KeyboardManager KeyboardManager { get; private set; } = new KeyboardManager();
 
         public Game()
@@ -24,25 +24,29 @@ namespace Arkanoid
                     int selected = rand.Next(20);
 
                     if (selected == 0)
-                        AllEntities.Add(new EntityBrickBall(x, y));
+                        AllEntities.Add(new SpriteBrickBall(x, y));
                     else if (selected < 5)
-                        AllEntities.Add(new EntityBrickRocket(x, y));
+                        AllEntities.Add(new SpriteBrickRocket(x, y));
                     else if (selected < 10)
-                        AllEntities.Add(new EntityBrickBlue(x, y));
+                        AllEntities.Add(new SpriteBrickBlue(x, y));
                     else
-                        AllEntities.Add(new EntityBrickGreen(x, y));
+                        AllEntities.Add(new SpriteBrickGreen(x, y));
                 }
             }
 
-            AllEntities.Add(new EntityPad(250, 450));
-            AllEntities.Add(new EntityBall(250, 400));
+            AllEntities.Add(new SpritePad(250, 450));
+            AllEntities.Add(new SpriteBall(250, 400));
         }
 
         public void OnTick()
         {
-            foreach (var obj in AllEntities.OfType<EntityMoving>())
+            foreach (var sprite in AllEntities.OfType<SpriteMoving>())
             {
-                obj.Update(this);
+                var otherSprites = AllEntities.Where(x => x != sprite).ToArray();
+
+                sprite.TestCollisions(otherSprites);
+
+                sprite.Update(this);
             }
 
             foreach (var td in AllEntities.Where(x => !x.Alive).ToArray())

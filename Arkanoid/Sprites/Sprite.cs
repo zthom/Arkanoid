@@ -5,9 +5,9 @@ using System.IO;
 using System.Text;
 using System.Windows.Media.Imaging;
 
-namespace Arkanoid.Entities
+namespace Arkanoid.Sprites
 {
-    public abstract class Entity : INotifyPropertyChanged
+    public abstract class Sprite : INotifyPropertyChanged
     {
         #region Properties
         private double x;
@@ -41,6 +41,8 @@ namespace Arkanoid.Entities
         public double Width { get; protected set; }
         public double Height { get; protected set; }
         public bool Alive { get; protected set; } = true;
+        public double Right => X + Width;
+        public double Bottom => Y + Height;
 
         public BitmapImage ImgSource { get; private set; }
         #endregion
@@ -55,7 +57,7 @@ namespace Arkanoid.Entities
         #endregion
 
         #region Functions
-        public Entity(double x, double y)
+        public Sprite(double x, double y)
         {
             this.X = x;
             this.Y = y;

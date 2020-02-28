@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Arkanoid.Entities
+namespace Arkanoid.Sprites
 {
-    public class EntityBrickBall : EntityBrick
+    public class SpriteBrickBall : SpriteBrick
     {
-        public EntityBrickBall(double x, double y) : base(x, y)
+        public SpriteBrickBall(double x, double y) : base(x, y)
         {
             LoadImage("BrickBall");
         }

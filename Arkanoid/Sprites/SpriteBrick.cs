@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Arkanoid.Entities
+namespace Arkanoid.Sprites
 {
-    public abstract class EntityBrick : Entity
+    public abstract class SpriteBrick : Sprite
     {
-        public EntityBrick(double x, double y) : base(x, y)
+        public SpriteBrick(double x, double y) : base(x, y)
         {
             this.Width = Constants.BrickWidth;
             this.Height = Constants.BrickHeight;

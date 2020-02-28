@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 
-namespace Arkanoid.Entities
+namespace Arkanoid.Sprites
 {
-    public class EntityPad : EntityMoving
+    public class SpritePad : SpriteMoving
     {
-        public EntityPad(double x, double y) : base(x, y)
+        public SpritePad(double x, double y) : base(x, y)
         {
             this.Width = Constants.PadWidth;
             this.Height = Constants.PadHeight;
