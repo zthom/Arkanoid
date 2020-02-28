@@ -19,7 +19,7 @@ namespace Arkanoid.Entities
         {
             if (game.KeyboardManager.IsPressed(Key.Left) && X > 0)
                 X -= Constants.PadSpeed;
-            else if (game.KeyboardManager.IsPressed(Key.Right) && X < (Constants.CanvasWidth - Constants.PadWidth))
+            else if (game.KeyboardManager.IsPressed(Key.Right) && X < (Constants.CanvasWidth - Width))
                 X += Constants.PadSpeed;
         }
     }

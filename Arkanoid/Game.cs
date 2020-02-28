@@ -35,6 +35,7 @@ namespace Arkanoid
             }
 
             AllEntities.Add(new EntityPad(250, 450));
+            AllEntities.Add(new EntityBall(250, 400));
         }
 
         public void OnTick()
