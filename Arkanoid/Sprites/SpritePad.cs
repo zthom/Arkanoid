@@ -36,5 +36,13 @@ namespace Arkanoid.Sprites
                 game.AddSprite(new SpriteBall(this.X + this.Width / 2 - Constants.BallSize / 2, this.Y - Constants.BallSize));
             }
         }
+
+        public override void OnCollision(Game game, Sprite sprite)
+        {
+            if (sprite is SpriteBubbleBall)
+                game.Counter.ModifyBalls(1);
+            else if (sprite is SpriteBubbleRocket)
+                game.Counter.ModifyRockets(1);
+        }
     }
 }

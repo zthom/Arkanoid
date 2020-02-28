@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Arkanoid.Logic;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,5 +13,12 @@ namespace Arkanoid.Sprites
         }
 
         public override int Score => 3;
+
+        public override void OnCollision(Game game, Sprite sprite)
+        {
+            base.OnCollision(game, sprite);
+
+            game.AddSprite(new SpriteBubbleRocket(this.X + this.Width / 2 - Constants.BubbleSize / 2, this.Bottom + Constants.BubbleSize));
+        }
     }
 }
