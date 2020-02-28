@@ -58,19 +58,19 @@ namespace Arkanoid.Logic
             Score = 0;
         }
 
-        public void IncreaseScore(int amount)
+        public void ModifyScore(int amount)
         {
             Score += amount;
         }
 
-        public void CheatBalls()
+        public void ModifyBalls(int amount)
         {
-            BallCounter += 100;
+            BallCounter += amount;
         }
 
-        public void CheatRockets()
+        public void ModifyRockets(int amount)
         {
-            Rockets += 100;
+            Rockets += amount;
         }
 
         #region Change Handler

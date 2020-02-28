@@ -15,8 +15,8 @@ namespace Arkanoid
         {
             Game = new Game();
 
-            CmdCheatBalls = new RelayCommand((obj) => Game.Counter.CheatBalls());
-            CmdCheatRocket = new RelayCommand((obj) => Game.Counter.CheatRockets());
+            CmdCheatBalls = new RelayCommand((obj) => Game.Counter.ModifyBalls(100));
+            CmdCheatRocket = new RelayCommand((obj) => Game.Counter.ModifyRockets(100));
         }
     }
 }

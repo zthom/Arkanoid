@@ -19,7 +19,7 @@ namespace Arkanoid.Sprites
         {
             Alive = false;
 
-            game.Counter.IncreaseScore(Score);
+            game.Counter.ModifyScore(Score);
         }
     }
 }

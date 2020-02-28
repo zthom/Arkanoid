@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using Arkanoid.Sprites;
 
@@ -36,10 +37,20 @@ namespace Arkanoid.Logic
             }
 
             AllEntities.Add(new SpritePad(250, 450));
-            AllEntities.Add(new SpriteBall(250, 400));
         }
 
         public void OnTick()
+        {
+            if (KeyboardManager.IsPressed(Key.Space) && !AllEntities.OfType<SpriteBall>().Any())
+            {
+                SpritePad pad = AllEntities.OfType<SpritePad>().Single();
+                AllEntities.Add(new SpriteBall(pad.X + pad.Width / 2 - Constants.BallSize / 2, pad.Y - Constants.BallSize));
+            }
+
+            UpdateSprites();
+        }
+
+        private void UpdateSprites()
         {
             foreach (var sprite in AllEntities.OfType<SpriteMoving>())
             {
