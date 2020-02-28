@@ -42,9 +42,10 @@ namespace Arkanoid
         {
             foreach (var sprite in AllEntities.OfType<SpriteMoving>())
             {
-                var otherSprites = AllEntities.Where(x => x != sprite).ToArray();
+                var collision = AllEntities.Where(x => x != sprite).FirstOrDefault(x => sprite.IsCollision(x));
 
-                sprite.TestCollisions(otherSprites);
+                if(collision != null)
+                    sprite.OnCollision(collision);
 
                 sprite.Update(this);
             }

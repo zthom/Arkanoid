@@ -12,18 +12,9 @@ namespace Arkanoid.Sprites
 
         public abstract void Update(Game game);
 
-        public void TestCollisions(Sprite[] otherSprites)
-        {
-            foreach (var sprite in otherSprites)
-            {
-                if (IsCollision(sprite))
-                    OnCollision(sprite);
-            }
-        }
+        public virtual void OnCollision(Sprite sprite) { }
 
-        protected virtual void OnCollision(Sprite sprite) { }
-
-        protected bool IsCollision(Sprite sprite)
+        public bool IsCollision(Sprite sprite)
         {
             return this.X < sprite.Right &&
                 sprite.X < this.Right &&
