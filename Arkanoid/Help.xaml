@@ -8,15 +8,21 @@
              d:DesignHeight="450" d:DesignWidth="200">
     <StackPanel>
         <TextBlock Style="{StaticResource HelpHeader}">Rules</TextBlock>
-        <TextBlock>Destroy all brick</TextBlock>
+        <TextBlock>Destroy all brick and UFO</TextBlock>
         <TextBlock>Don`t loose too many balls</TextBlock>
         <TextBlock>Pick bubbles to gain rockets and balls</TextBlock>
         <TextBlock>You can have more balls flying</TextBlock>
 
+        <TextBlock Style="{StaticResource HelpHeader}">UFO</TextBlock>
+        <TextBlock>Droping bombs</TextBlock>
+        <TextBlock>Bombs destroy bricks and balls</TextBlock>
+        <TextBlock>Boms can kill your pad</TextBlock>
+        <TextBlock>Kill UFO with ball or rocket</TextBlock>
+
         <TextBlock Style="{StaticResource HelpHeader}">Controls</TextBlock>
         <TextBlock>Arrows - move pad</TextBlock>
-        <TextBlock>Space - launch new ball</TextBlock>
-        <TextBlock>Left control - launch rocket, if any</TextBlock>
+        <TextBlock>Space - launch new ball(s)</TextBlock>
+        <TextBlock>Left control - launch rocket(s), if you have any</TextBlock>
         <TextBlock>Click on restart to restart</TextBlock>
         <TextBlock>You can cheat</TextBlock>
     </StackPanel>
