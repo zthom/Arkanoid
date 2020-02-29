@@ -18,6 +18,7 @@ namespace Arkanoid.Sprites
         {
             base.OnCollision(game, sprite);
 
+            // Generates bubble with ball
             if (sprite is SpriteBomb || sprite is SpriteRocket || sprite is SpriteBall)
                 game.AddSprite(new SpriteBubbleBall(this.X + this.Width / 2 - Constants.BubbleSize / 2, this.Bottom + Constants.BubbleSize));
         }

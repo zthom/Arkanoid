@@ -11,8 +11,16 @@ namespace Arkanoid.Sprites
         {
         }
 
+        /// <summary>
+        /// Moves sprites and updates speed and logic
+        /// </summary>
         public abstract void Update(Game game);
 
+        /// <summary>
+        /// Checks if there is collision between two sprites
+        /// </summary>
+        /// <param name="sprite">Other sprite to check</param>
+        /// <returns>Collided or not</returns>
         public bool IsCollision(Sprite sprite)
         {
             return this.X < sprite.Right &&

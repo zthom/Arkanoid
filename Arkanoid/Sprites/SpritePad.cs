@@ -9,7 +9,14 @@ namespace Arkanoid.Sprites
 {
     public class SpritePad : SpriteMoving
     {
+        /// <summary>
+        /// Prevents multiple launches
+        /// </summary>
         private bool CanRocket { get; set; }
+
+        /// <summary>
+        /// Prevents multiple launches
+        /// </summary>
         private bool CanBall { get; set; }
 
         public SpritePad(double x, double y) : base(x, y)
@@ -22,11 +29,13 @@ namespace Arkanoid.Sprites
 
         public override void Update(Game game)
         {
+            // Moves pad only when arrows are pressed
             if (game.KeyboardManager.IsPressed(Key.Left) && X > 0)
                 X -= Constants.PadSpeed;
             else if (game.KeyboardManager.IsPressed(Key.Right) && X < (Constants.CanvasWidth - Width))
                 X += Constants.PadSpeed;
 
+            // Launches rocket when Ctrl is pressed for first time
             if (game.KeyboardManager.IsPressed(Key.LeftCtrl) && CanRocket && game.Counter.Rockets > 0)
             {
                 game.Counter.ModifyRockets(-1);
@@ -34,6 +43,7 @@ namespace Arkanoid.Sprites
                 CanRocket = false;
             }
 
+            // Launches ball when Space is pressed for first time
             if (game.KeyboardManager.IsPressed(Key.Space) && CanBall && game.Counter.BallCounter > 0)
             {
                 game.Counter.ModifyBalls(-1);
@@ -41,6 +51,7 @@ namespace Arkanoid.Sprites
                 CanBall = false;
             }
 
+            // Prevents multiple launches
             CanBall = !game.KeyboardManager.IsPressed(Key.Space) ? true : CanBall;
             CanRocket = !game.KeyboardManager.IsPressed(Key.LeftCtrl) ? true : CanRocket;
         }

@@ -15,8 +15,10 @@ namespace Arkanoid.Sprites
 
         public override void Update(Game game)
         {
+            // Moves bubble
             Y += Constants.BubbleSpeed;
 
+            // If falls below, marks it to be removed
             if (Bottom > Constants.CanvasHeight)
                 Alive = false;
         }

@@ -23,9 +23,11 @@ namespace Arkanoid.Sprites
 
         public override void Update(Game game)
         {
+            // Moves ball
             X += SpeedX;
             Y += SpeedY;
 
+            // Updates speed
             if (X < 0)
                 SpeedX = Constants.BallSpeed;
             else if (X > (Constants.CanvasWidth - Width))
@@ -36,6 +38,7 @@ namespace Arkanoid.Sprites
             else if (Y > (Constants.CanvasHeight - Height))
                 SpeedY = -Constants.BallSpeed;
 
+            // If falls below, marks it to be removed
             if (Bottom >= Constants.CanvasHeight)
                 Alive = false;
         }
@@ -44,6 +47,7 @@ namespace Arkanoid.Sprites
         {
             switch (sprite)
             {
+                // Bounces from brick
                 case SpriteBrick _:
                     if (this.X < sprite.X || this.Right > sprite.Right)
                         SpeedX *= -1;
@@ -51,12 +55,14 @@ namespace Arkanoid.Sprites
                     if (this.Y < sprite.Bottom || this.Bottom > sprite.Y)
                         SpeedY *= -1;
                     break;
+                // Bounces from pad, only up
                 case SpritePad _:
                     if (this.X < sprite.X || this.Right > sprite.Right)
                         SpeedX *= -1;
 
                     SpeedY = -Constants.BallSpeed;
                     break;
+                // Destroyed  by rocket and bomb
                 case SpriteRocket _:
                 case SpriteBomb _:
                     Alive = false;

@@ -17,8 +17,10 @@ namespace Arkanoid.Sprites
 
         public override void Update(Game game)
         {
+            // Moves bomb
             Y += Constants.BombSpeed;
 
+            // If falls below, marks it to be removed
             if (Bottom >= Constants.CanvasHeight)
                 Alive = false;
         }

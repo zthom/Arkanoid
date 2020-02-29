@@ -13,6 +13,9 @@ namespace Arkanoid.Sprites
             this.Height = Constants.BrickHeight;
         }
 
+        /// <summary>
+        /// What score is added after touched by ball or rocket
+        /// </summary>
         public abstract int Score { get; }
 
         public override void OnCollision(Game game, Sprite sprite)

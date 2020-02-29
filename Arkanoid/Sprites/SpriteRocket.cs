@@ -17,14 +17,17 @@ namespace Arkanoid.Sprites
 
         public override void Update(Game game)
         {
+            // Moves rocket
             Y -= Constants.RocketSpeed;
 
+            // If flies over screen, marks it to be removed
             if (Y < 0)
                 Alive = false;
         }
 
         public override void OnCollision(Game game, Sprite sprite)
         {
+            // Destroyed by everything except other rocket, to prevent destruction by fast rocket launching
             if (sprite is SpriteRocket == false)
                 Alive = false;
         }

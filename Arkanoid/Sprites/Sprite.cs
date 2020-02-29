@@ -8,6 +8,9 @@ using System.Windows.Media.Imaging;
 
 namespace Arkanoid.Sprites
 {
+    /// <summary>
+    /// Game object
+    /// </summary>
     public abstract class Sprite : INotifyPropertyChanged
     {
         #region Properties with Notify
@@ -67,12 +70,21 @@ namespace Arkanoid.Sprites
             this.Alive = true;
         }
 
+        /// <summary>
+        /// Loads image of sprite
+        /// </summary>
+        /// <param name="imgName">Only file name without extension</param>
         protected void LoadImage(string imgName)
         {
             string path = System.Environment.CurrentDirectory + @"\Images\" + imgName + ".png";
             ImgSource = new BitmapImage(new Uri(path, UriKind.Absolute));
         }
 
+        /// <summary>
+        /// Solves collision
+        /// </summary>
+        /// <param name="game">Game logic</param>
+        /// <param name="sprite">Other sprite current sprite collided with</param>
         public virtual void OnCollision(Game game, Sprite sprite) { }
         #endregion
     }
