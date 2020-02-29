@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Arkanoid"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="900" PreviewKeyDown="Window_PreviewKeyDown" PreviewKeyUp="Window_PreviewKeyUp" Loaded="Window_Loaded">
+        Title="Arkanoid" Height="550" Width="1050" PreviewKeyDown="Window_PreviewKeyDown" PreviewKeyUp="Window_PreviewKeyUp" Loaded="Window_Loaded">
     <Window.DataContext>
         <local:ViewModel/>
     </Window.DataContext>
@@ -27,5 +27,6 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+        <local:Help />
     </WrapPanel>
 </Window>

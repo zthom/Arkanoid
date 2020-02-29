@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Arkanoid"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="100">
+             d:DesignHeight="450" d:DesignWidth="150">
     <StackPanel>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -25,7 +25,7 @@
             <Label Grid.Column="1" Grid.Row="2"  Content="{Binding Game.Counter.Rockets}"/>
         </Grid>
         <StackPanel>
-            <Label Content="Cheats" Style="{StaticResource Header}" />
+            <Label Content="Cheats" Style="{StaticResource SidebarHeader}" />
             <Button Command="{Binding CmdCheatBalls}">More balls</Button>
             <Button Command="{Binding CmdCheatRockets}">More rockets</Button>
         </StackPanel>
