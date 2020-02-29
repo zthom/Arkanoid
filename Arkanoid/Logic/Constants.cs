@@ -9,9 +9,17 @@ namespace Arkanoid.Logic
     /// </summary>
     public static class Constants
     {
+        #region Speed settings
+        public static TimeSpan GameSpeed => TimeSpan.FromMilliseconds(15);
+        private static int DefaultSpeed => 5;
+        #endregion
+
+        #region Game area
         public static int CanvasWidth => 700;
         public static int CanvasHeight => 500;
+        #endregion
 
+        #region Objects sizes
         private static int DefaultSize => 50;
 
         public static int BrickWidth => DefaultSize;
@@ -31,18 +39,17 @@ namespace Arkanoid.Logic
 
         public static int UfoWidth => DefaultSize * 2;
         public static int UfoHeight => DefaultSize;
+        #endregion
 
-        private static int DefaultSpeed => 10;
-
-        public static TimeSpan GameSpeed => TimeSpan.FromMilliseconds(20);
-
+        #region Objects speeds
         public static double PadSpeed => DefaultSpeed * 2;
         public static double BallSpeed => DefaultSpeed;
         public static double RocketSpeed => DefaultSpeed;
         public static double BubbleSpeed => DefaultSpeed;
         public static double BombSpeed => DefaultSpeed;
         public static double UfoSpeed => DefaultSpeed / 2;
+        #endregion
 
-        public static int UfoBomb => 50;
+        public static int UfoBombRate => 50;
     }
 }

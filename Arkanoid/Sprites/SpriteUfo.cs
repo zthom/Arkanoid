@@ -33,7 +33,7 @@ namespace Arkanoid.Sprites
                 Speed = -Constants.UfoSpeed;
 
             // Drops bomb
-            if (Rand.Next(Constants.UfoBomb) == 0)
+            if (Rand.Next(Constants.UfoBombRate) == 0)
             {
                 game.AddSprite(new SpriteBomb(this.X + this.Width / 2 - Constants.BombWidth / 2, this.Bottom + Constants.BombHeight));
             }
