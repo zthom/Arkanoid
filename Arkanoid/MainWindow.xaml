@@ -16,7 +16,7 @@
         <WrapPanel >
             <local:Sidebar />
 
-            <ItemsControl ItemsSource="{Binding Game.AllEntities}">
+            <ItemsControl ItemsSource="{Binding Game.AllSprites}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <Canvas Background="LightGray" Width="700" Height="500" Margin="10,0"/>
