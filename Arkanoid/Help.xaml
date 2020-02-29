@@ -16,5 +16,7 @@
         <TextBlock>Arrows - move pad</TextBlock>
         <TextBlock>Space - launch new ball</TextBlock>
         <TextBlock>Left control - launch rocket, if any</TextBlock>
+        <TextBlock>Click on restart to restart</TextBlock>
+        <TextBlock>You can cheat</TextBlock>
     </StackPanel>
 </UserControl>
