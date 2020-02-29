@@ -102,11 +102,11 @@ namespace Arkanoid.Logic
 
         private GameState GetGameState()
         {
-            if (!AllEntities.OfType<SpriteBrick>().Any())
+            if (!AllEntities.OfType<SpriteBrick>().Any() && !AllEntities.OfType<SpriteUfo>().Any())
                 return GameState.Victory;
             else if (Counter.BallCounter <= 0 && !AllEntities.OfType<SpriteBall>().Any())
                 return GameState.Defeat;
-            else if ( !AllEntities.OfType<SpritePad>().Any())
+            else if (!AllEntities.OfType<SpritePad>().Any())
                 return GameState.Defeat;
 
             return GameState.Running;
