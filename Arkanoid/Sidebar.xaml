@@ -32,6 +32,7 @@
             <Label Content="Cheats" Style="{StaticResource SidebarHeader}" />
             <Button Command="{Binding CmdCheatBalls}">More balls</Button>
             <Button Command="{Binding CmdCheatRockets}">More rockets</Button>
+            <Button Command="{Binding CmdCheatKillUfo}">Kill ufo</Button>
         </StackPanel>
     </StackPanel>
 </UserControl>

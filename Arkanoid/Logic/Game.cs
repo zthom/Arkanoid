@@ -51,6 +51,14 @@ namespace Arkanoid.Logic
             AddSprite(new SpriteUfo(0, 10));
         }
 
+        public void KillUfo()
+        {
+            var ufo = AllEntities.OfType<SpriteUfo>().FirstOrDefault();
+
+            if (ufo != null)
+                AllEntities.Remove(ufo);
+        }
+
         public void AddSprite(Sprite sprite)
         {
             AllEntities.Add(sprite);

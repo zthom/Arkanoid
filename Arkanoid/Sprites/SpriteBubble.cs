@@ -17,7 +17,7 @@ namespace Arkanoid.Sprites
         {
             Y += Constants.BubbleSpeed;
 
-            if (Y > Constants.CanvasHeight)
+            if (Bottom > Constants.CanvasHeight)
                 Alive = false;
         }
 

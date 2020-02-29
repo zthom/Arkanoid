@@ -46,7 +46,7 @@ namespace Arkanoid
             Game game = ((ViewModel)DataContext).Game;
 
             DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromMilliseconds(20);
+            timer.Interval = Constants.GameSpeed;
             timer.Tick += (s, e) => game.OnTick();
             timer.Start();
         }

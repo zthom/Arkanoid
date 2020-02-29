@@ -31,6 +31,8 @@ namespace Arkanoid.Logic
 
         private static int DefaultSpeed => 10;
 
+        public static TimeSpan GameSpeed => TimeSpan.FromMilliseconds(20);
+
         public static double PadSpeed => DefaultSpeed * 2;
         public static double BallSpeed => DefaultSpeed;
         public static double RocketSpeed => DefaultSpeed;

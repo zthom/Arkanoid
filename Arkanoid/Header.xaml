@@ -7,9 +7,9 @@
              mc:Ignorable="d"
              Height="70">
     <StackPanel>
-        <Label Style="{StaticResource MainHeader}" Width="1050" Content="Arkanoid by Tomas Zabrsa" />
+        <Label Style="{StaticResource MainHeader}" Width="1100" Content="Arkanoid by Tomas Zabrsa" />
 
-        <Label  Width="1050" Content="{Binding Game.Counter.GameState}">
+        <Label  Width="1100" Content="{Binding Game.Counter.GameState}">
             <Label.Style>
                 <Style TargetType="Label">
                     <Style.Triggers>
