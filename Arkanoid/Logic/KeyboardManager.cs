@@ -5,6 +5,9 @@ using System.Windows.Input;
 
 namespace Arkanoid.Logic
 {
+    /// <summary>
+    /// Stores state of all keys pressed and released
+    /// </summary>
     public class KeyboardManager
     {
         private Dictionary<Key, bool> DictKeys { get; set; } = new Dictionary<Key, bool>();
@@ -19,6 +22,9 @@ namespace Arkanoid.Logic
             DictKeys[key] = false;
         }
 
+        /// <summary>
+        /// Returns if key is currently pressed or released
+        /// </summary>
         public bool IsPressed(Key key)
         {
             if (DictKeys.ContainsKey(key))

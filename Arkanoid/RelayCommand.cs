@@ -5,6 +5,9 @@ using System.Windows.Input;
 
 namespace Arkanoid
 {
+    /// <summary>
+    /// Dispatches ICommand in two defined functions
+    /// </summary>
     public class RelayCommand : ICommand
     {
         private Action<object> OnExecute;

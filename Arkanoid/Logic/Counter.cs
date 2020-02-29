@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Arkanoid.Logic
 {
+    /// <summary>
+    /// Contains values for score, rockes and ball. Also contains GameState
+    /// </summary>
     public class Counter : INotifyPropertyChanged
     {
         #region Properties

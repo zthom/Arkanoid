@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Arkanoid
 {
+    /// <summary>
+    /// ViewModel for game and button commands
+    /// </summary>
     public class ViewModel
     {
         public Game Game { get; private set; }

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Arkanoid.Logic
 {
+    /// <summary>
+    /// Shared constants in whole game, so they can be changed in one place
+    /// </summary>
     public static class Constants
     {
         public static int CanvasWidth => 700;

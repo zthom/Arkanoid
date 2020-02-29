@@ -17,6 +17,7 @@
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
+            
             <Label Content="Score:" Style="{StaticResource Info}"/>
             <Label Grid.Column="1" Content="{Binding Game.Counter.Score}"/>
             <Label Grid.Row="1" Content="Balls:" Style="{StaticResource Info}"/>
@@ -24,10 +25,12 @@
             <Label Grid.Row="2" Content="Rockets:" Style="{StaticResource Info}"/>
             <Label Grid.Column="1" Grid.Row="2"  Content="{Binding Game.Counter.Rockets}"/>
         </Grid>
+        
         <StackPanel>
             <Label Content="Controls" Style="{StaticResource SidebarHeader}" />
             <Button Command="{Binding CmdRestart}">Restart</Button>
         </StackPanel>
+        
         <StackPanel>
             <Label Content="Cheats" Style="{StaticResource SidebarHeader}" />
             <Button Command="{Binding CmdCheatBalls}">More balls</Button>

@@ -27,6 +27,9 @@ namespace Arkanoid
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Passes keyboard events to game
+        /// </summary>
         private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             Game game = ((ViewModel)DataContext).Game;
@@ -35,12 +38,18 @@ namespace Arkanoid
             e.Handled = true;
         }
 
+        /// <summary>
+        /// Passes keyboard events to game
+        /// </summary>
         private void Window_PreviewKeyUp(object sender, KeyEventArgs e)
         {
             Game game = ((ViewModel)DataContext).Game;
             game.KeyboardManager.KeyUp(e.Key);
         }
 
+        /// <summary>
+        /// Starts game timer
+        /// </summary>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Game game = ((ViewModel)DataContext).Game;
