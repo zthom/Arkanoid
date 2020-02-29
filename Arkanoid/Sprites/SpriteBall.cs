@@ -32,7 +32,7 @@ namespace Arkanoid.Sprites
             if (Y < 0 || Y > (Constants.CanvasHeight - Height))
                 SpeedY *= -1;
 
-            if (Bottom > Constants.CanvasHeight)
+            if (Bottom >= Constants.CanvasHeight)
                 Alive = false;
         }
 

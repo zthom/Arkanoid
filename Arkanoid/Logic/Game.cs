@@ -79,8 +79,6 @@ namespace Arkanoid.Logic
                     if (collision is SpriteMoving == false)
                         collision.OnCollision(this, sprite);
                 }
-
-                sprite.Update(this);
             }
         }
 
