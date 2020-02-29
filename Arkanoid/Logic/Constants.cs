@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Arkanoid.Logic
 {
-    static class Constants
+    public static class Constants
     {
         public static int CanvasWidth => 700;
         public static int CanvasHeight => 500;

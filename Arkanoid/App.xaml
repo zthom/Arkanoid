@@ -7,19 +7,23 @@
         <Style TargetType ="Label" x:Key="Info">
             <Setter Property = "FontWeight" Value="Bold" />
         </Style>
+        
         <Style TargetType ="Label" x:Key="SidebarHeader">
             <Setter Property = "HorizontalAlignment" Value = "Center" />
             <Setter Property = "FontWeight" Value="Bold" />
         </Style>
+        
         <Style TargetType ="TextBlock" x:Key="HelpHeader">
             <Setter Property = "HorizontalAlignment" Value = "Center" />
             <Setter Property = "FontWeight" Value="Bold" />
             <Setter Property="Margin" Value="0,10"/>
         </Style>
+        
         <Style TargetType ="Label" x:Key="MainHeader">
             <Setter Property = "HorizontalContentAlignment" Value = "Center" />
             <Setter Property = "FontWeight" Value="Bold" />
             <Setter Property="FontSize" Value="20"/>
         </Style>
+        
     </Application.Resources>
 </Application>

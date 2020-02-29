@@ -11,10 +11,7 @@
     </Window.DataContext>
 
     <StackPanel>
-        <StackPanel>
-            <Label Style="{StaticResource MainHeader}" Width="1050" Content="Arkanoid by Tomas Zabrsa"/>
-            <Label Style="{StaticResource MainHeader}" Width="1050" Content="{Binding Game.Counter.GameState}"/>
-        </StackPanel>
+        <local:Header />
 
         <WrapPanel >
             <local:Sidebar />
