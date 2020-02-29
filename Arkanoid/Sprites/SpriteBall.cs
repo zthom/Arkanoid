@@ -61,6 +61,10 @@ namespace Arkanoid.Sprites
             {
                 Alive = false;
             }
+            else if (sprite is SpriteBomb)
+            {
+                Alive = false;
+            }
         }
     }
 }

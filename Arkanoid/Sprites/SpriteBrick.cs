@@ -17,9 +17,11 @@ namespace Arkanoid.Sprites
 
         public override void OnCollision(Game game, Sprite sprite)
         {
-            Alive = false;
+            if (sprite is SpriteBomb || sprite is SpriteRocket || sprite is SpriteBall)
+                Alive = false;
 
-            game.Counter.ModifyScore(Score);
+            if (sprite is SpriteRocket || sprite is SpriteBall)
+                game.Counter.ModifyScore(Score);
         }
     }
 }

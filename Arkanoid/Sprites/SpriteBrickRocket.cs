@@ -18,7 +18,8 @@ namespace Arkanoid.Sprites
         {
             base.OnCollision(game, sprite);
 
-            game.AddSprite(new SpriteBubbleRocket(this.X + this.Width / 2 - Constants.BubbleSize / 2, this.Bottom + Constants.BubbleSize));
+            if (sprite is SpriteBomb || sprite is SpriteRocket || sprite is SpriteBall)
+                game.AddSprite(new SpriteBubbleRocket(this.X + this.Width / 2 - Constants.BubbleSize / 2, this.Bottom + Constants.BubbleSize));
         }
     }
 }

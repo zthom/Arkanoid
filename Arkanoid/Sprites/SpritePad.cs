@@ -51,6 +51,8 @@ namespace Arkanoid.Sprites
                 game.Counter.ModifyBalls(1);
             else if (sprite is SpriteBubbleRocket)
                 game.Counter.ModifyRockets(1);
+            else if (sprite is SpriteBomb)
+                Alive = false;
         }
     }
 }

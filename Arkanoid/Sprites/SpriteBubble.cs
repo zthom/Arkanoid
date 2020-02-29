@@ -23,7 +23,7 @@ namespace Arkanoid.Sprites
 
         public override void OnCollision(Game game, Sprite sprite)
         {
-            if (sprite is SpriteBrickRocket || sprite is SpritePad)
+            if (sprite is SpriteRocket || sprite is SpritePad)
                 Alive = false;
         }
     }

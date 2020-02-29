@@ -47,6 +47,8 @@ namespace Arkanoid.Logic
             }
 
             AddSprite(new SpritePad(250, 460));
+
+            AddSprite(new SpriteUfo(0, 10));
         }
 
         public void AddSprite(Sprite sprite)
@@ -103,6 +105,8 @@ namespace Arkanoid.Logic
             if (!AllEntities.OfType<SpriteBrick>().Any())
                 return GameState.Victory;
             else if (Counter.BallCounter <= 0 && !AllEntities.OfType<SpriteBall>().Any())
+                return GameState.Defeat;
+            else if ( !AllEntities.OfType<SpritePad>().Any())
                 return GameState.Defeat;
 
             return GameState.Running;
