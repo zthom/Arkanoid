@@ -41,11 +41,7 @@ namespace Arkanoid.Sprites
 
         public override void OnCollision(Game game, Sprite sprite)
         {
-            if (sprite is SpritePad)
-            {
-                SpeedY *= -1;
-            }
-            else if (sprite is SpriteBrick)
+            if (sprite is SpritePad || sprite is SpriteBrick)
             {
                 if (this.X < sprite.X || this.Right > sprite.Right)
                     SpeedX *= -1;
