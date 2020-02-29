@@ -68,6 +68,11 @@ namespace Arkanoid.Logic
         #region Functions
         public Counter()
         {
+            Init();
+        }
+
+        public void Init()
+        {
             Rockets = 0;
             BallCounter = 10;
             Score = 0;

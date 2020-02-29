@@ -19,6 +19,14 @@ namespace Arkanoid.Logic
 
         public Game()
         {
+            Init();
+        }
+
+        public void Init()
+        {
+            AllEntities.Clear();
+            Counter.Init();
+
             Random rand = new Random();
 
             for (int x = 0; x < Constants.CanvasWidth; x += Constants.BrickWidth)

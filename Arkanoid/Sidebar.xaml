@@ -25,6 +25,10 @@
             <Label Grid.Column="1" Grid.Row="2"  Content="{Binding Game.Counter.Rockets}"/>
         </Grid>
         <StackPanel>
+            <Label Content="Controls" Style="{StaticResource SidebarHeader}" />
+            <Button Command="{Binding CmdRestart}">Restart</Button>
+        </StackPanel>
+        <StackPanel>
             <Label Content="Cheats" Style="{StaticResource SidebarHeader}" />
             <Button Command="{Binding CmdCheatBalls}">More balls</Button>
             <Button Command="{Binding CmdCheatRockets}">More rockets</Button>

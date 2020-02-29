@@ -31,6 +31,8 @@ namespace Arkanoid
         {
             Game game = ((ViewModel)DataContext).Game;
             game.KeyboardManager.KeyDown(e.Key);
+
+            e.Handled = true;
         }
 
         private void Window_PreviewKeyUp(object sender, KeyEventArgs e)
