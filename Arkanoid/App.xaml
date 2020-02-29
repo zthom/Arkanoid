@@ -16,5 +16,11 @@
             <Setter Property = "FontWeight" Value="Bold" />
             <Setter Property="Margin" Value="0,10"/>
         </Style>
+        <Style TargetType ="Label" x:Key="MainHeader">
+            <Setter Property = "HorizontalContentAlignment" Value = "Center" />
+            <Setter Property = "FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="0,10"/>
+        </Style>
     </Application.Resources>
 </Application>
