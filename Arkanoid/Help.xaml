@@ -11,6 +11,7 @@
         <TextBlock>Destroy all brick</TextBlock>
         <TextBlock>Don`t loose too many balls</TextBlock>
         <TextBlock>Pick bubbles to gain rockets and balls</TextBlock>
+        <TextBlock>You can have more balls flying</TextBlock>
 
         <TextBlock Style="{StaticResource HelpHeader}">Controls</TextBlock>
         <TextBlock>Arrows - move pad</TextBlock>

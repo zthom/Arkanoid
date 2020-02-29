@@ -104,7 +104,7 @@ namespace Arkanoid.Logic
         {
             if (!AllEntities.OfType<SpriteBrick>().Any())
                 return GameState.Victory;
-            else if (Counter.BallCounter <= 0)
+            else if (Counter.BallCounter <= 0 && !AllEntities.OfType<SpriteBall>().Any())
                 return GameState.Defeat;
 
             return GameState.Running;

@@ -19,13 +19,14 @@ namespace Arkanoid.Sprites
         {
             Y -= Constants.RocketSpeed;
 
-            if (Bottom < 0)
+            if (Y < 0)
                 Alive = false;
         }
 
         public override void OnCollision(Game game, Sprite sprite)
         {
-            Alive = false;
+            if (sprite is SpriteRocket == false)
+                Alive = false;
         }
     }
 }

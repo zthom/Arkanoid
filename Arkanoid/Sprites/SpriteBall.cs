@@ -33,10 +33,7 @@ namespace Arkanoid.Sprites
                 SpeedY *= -1;
 
             if (Bottom > Constants.CanvasHeight)
-            {
                 Alive = false;
-                game.Counter.ModifyBalls(-1);
-            }
         }
 
         public override void OnCollision(Game game, Sprite sprite)
