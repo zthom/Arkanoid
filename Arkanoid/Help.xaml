@@ -16,7 +16,7 @@
         <TextBlock Style="{StaticResource HelpHeader}">UFO</TextBlock>
         <TextBlock>Droping bombs</TextBlock>
         <TextBlock>Bombs destroy bricks and balls</TextBlock>
-        <TextBlock>Boms can kill your pad</TextBlock>
+        <TextBlock>Bombs can kill your pad</TextBlock>
         <TextBlock>Kill UFO with ball or rocket</TextBlock>
 
         <TextBlock Style="{StaticResource HelpHeader}">Controls</TextBlock>
