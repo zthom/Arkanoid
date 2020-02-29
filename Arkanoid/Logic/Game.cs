@@ -15,6 +15,8 @@ namespace Arkanoid.Logic
         public KeyboardManager KeyboardManager { get; private set; } = new KeyboardManager();
         public Counter Counter { get; private set; } = new Counter();
 
+        public GameState GameState => GetGameState();
+
         public Game()
         {
             Random rand = new Random();
@@ -36,7 +38,7 @@ namespace Arkanoid.Logic
                 }
             }
 
-            AddSprite(new SpritePad(250, 450));
+            AddSprite(new SpritePad(250, 460));
         }
 
         public void AddSprite(Sprite sprite)
@@ -46,12 +48,17 @@ namespace Arkanoid.Logic
 
         public void OnTick()
         {
-           
+            if (GameState == GameState.Running)
+            {
+                SolveCollisions();
+                UpdateSprites();
+                RemoveDeadSprites();
+            }
 
-            UpdateSprites();
+            Counter.UpdateGameState(GameState);
         }
 
-        private void UpdateSprites()
+        private void SolveCollisions()
         {
             foreach (var sprite in AllEntities.OfType<SpriteMoving>().ToArray())
             {
@@ -67,11 +74,32 @@ namespace Arkanoid.Logic
 
                 sprite.Update(this);
             }
+        }
 
+        private void UpdateSprites()
+        {
+            foreach (var sprite in AllEntities.OfType<SpriteMoving>().ToArray())
+            {
+                sprite.Update(this);
+            }
+        }
+
+        private void RemoveDeadSprites()
+        {
             foreach (var td in AllEntities.Where(x => !x.Alive).ToArray())
             {
                 AllEntities.Remove(td);
             }
+        }
+
+        private GameState GetGameState()
+        {
+            if (!AllEntities.OfType<SpriteBrick>().Any())
+                return GameState.Victory;
+            else if (Counter.BallCounter <= 0)
+                return GameState.Defeat;
+
+            return GameState.Running;
         }
     }
 }

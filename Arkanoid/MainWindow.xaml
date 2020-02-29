@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Arkanoid"
         mc:Ignorable="d"
-        Title="Arkanoid" Height="550" Width="1050" PreviewKeyDown="Window_PreviewKeyDown" PreviewKeyUp="Window_PreviewKeyUp" Loaded="Window_Loaded">
+        Title="Arkanoid" Height="650" Width="1050" PreviewKeyDown="Window_PreviewKeyDown" PreviewKeyUp="Window_PreviewKeyUp" Loaded="Window_Loaded">
     <Window.DataContext>
         <local:ViewModel/>
     </Window.DataContext>
 
     <StackPanel>
-        <WrapPanel>
-            <Label Style="{StaticResource MainHeader}" Width="1050">Arkanoid by Tomas Zabrsa</Label>
-        </WrapPanel>
+        <StackPanel>
+            <Label Style="{StaticResource MainHeader}" Width="1050" Content="Arkanoid by Tomas Zabrsa"/>
+            <Label Style="{StaticResource MainHeader}" Width="1050" Content="{Binding Game.Counter.GameState}"/>
+        </StackPanel>
 
         <WrapPanel >
             <local:Sidebar />

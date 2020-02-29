@@ -49,8 +49,23 @@ namespace Arkanoid.Logic
                 }
             }
         }
+
+        private GameState gameState;
+        public GameState GameState
+        {
+            get { return this.gameState; }
+            protected set
+            {
+                if (this.gameState != value)
+                {
+                    this.gameState = value;
+                    this.NotifyPropertyChanged(nameof(GameState));
+                }
+            }
+        }
         #endregion
 
+        #region Functions
         public Counter()
         {
             Rockets = 0;
@@ -72,6 +87,12 @@ namespace Arkanoid.Logic
         {
             Rockets += amount;
         }
+
+        public void UpdateGameState(GameState newState)
+        {
+            GameState = newState;
+        }
+        #endregion
 
         #region Change Handler
         public event PropertyChangedEventHandler PropertyChanged;
