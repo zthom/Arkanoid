@@ -42,28 +42,25 @@ namespace Arkanoid.Sprites
 
         public override void OnCollision(Game game, Sprite sprite)
         {
-            if (sprite is SpriteBrick)
+            switch (sprite)
             {
-                if (this.X < sprite.X || this.Right > sprite.Right)
-                    SpeedX *= -1;
+                case SpriteBrick _:
+                    if (this.X < sprite.X || this.Right > sprite.Right)
+                        SpeedX *= -1;
 
-                if (this.Y < sprite.Bottom || this.Bottom > sprite.Y)
-                    SpeedY *= -1;
-            }
-            else if (sprite is SpritePad)
-            {
-                if (this.X < sprite.X || this.Right > sprite.Right)
-                    SpeedX *= -1;
+                    if (this.Y < sprite.Bottom || this.Bottom > sprite.Y)
+                        SpeedY *= -1;
+                    break;
+                case SpritePad _:
+                    if (this.X < sprite.X || this.Right > sprite.Right)
+                        SpeedX *= -1;
 
-                SpeedY = -Constants.BallSpeed;
-            }
-            else if (sprite is SpriteRocket)
-            {
-                Alive = false;
-            }
-            else if (sprite is SpriteBomb)
-            {
-                Alive = false;
+                    SpeedY = -Constants.BallSpeed;
+                    break;
+                case SpriteRocket _:
+                case SpriteBomb _:
+                    Alive = false;
+                    break;
             }
         }
     }
